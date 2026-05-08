@@ -6,6 +6,8 @@ const env = {
   port: Number(process.env.PORT || 4500),
   mongoUri: process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/web-scraper",
   clientUrl: process.env.CLIENT_URL || "http://localhost:5173",
+  authTokenSecret:
+    process.env.AUTH_TOKEN_SECRET || "change-this-development-auth-secret",
   scraperSourceUrl:
     process.env.SCRAPER_SOURCE_URL || "https://news.ycombinator.com",
   scraperTimeoutMs: Number(process.env.SCRAPER_TIMEOUT_MS || 10000),

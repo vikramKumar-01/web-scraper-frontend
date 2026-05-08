@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import env from "./config/env.js";
+import authRoutes from "./routes/authRoutes.js";
 import scrapeRoutes from "./routes/scrapeRoutes.js";
 import notFound from "./middlewares/notFound.js";
 import errorHandler from "./middlewares/errorHandler.js";
@@ -24,6 +25,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+app.use("/api/auth", authRoutes);
 app.use("/api", scrapeRoutes);
 app.use(notFound);
 app.use(errorHandler);
