@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Manrope", sans-serif;
+    color: theme("colors.ink");
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden bg-mist text-ink antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(249, 115, 22, 0.12), transparent 24%),
+      radial-gradient(circle at top right, rgba(15, 118, 110, 0.12), transparent 22%),
+      linear-gradient(180deg, rgba(255,255,255,0.8), rgba(248,250,252,1));
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-white shadow-sm hover:-translate-y-0.5 hover:bg-slate hover:shadow-lg focus:ring-ink;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-ink ring-1 ring-slate-200 hover:-translate-y-0.5 hover:bg-sand focus:ring-slate-300;
+  }
+
+  .btn-accent {
+    @apply btn bg-ember text-white shadow-sm hover:-translate-y-0.5 hover:bg-orange-600 hover:shadow-lg focus:ring-ember;
+  }
+
+  .card {
+    @apply overflow-hidden rounded-[28px] border border-white/70 bg-white/90 shadow-panel backdrop-blur;
+  }
+
+  .input {
+    @apply w-full min-w-0 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink outline-none transition placeholder:text-slate/70 focus:border-ink focus:ring-2 focus:ring-ink/10;
+  }
+
+  .label {
+    @apply mb-2 block text-sm font-semibold text-ink;
+  }
+
+  .page-section {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  .auth-shell {
+    @apply flex min-h-[calc(100vh-8rem)] items-center justify-center py-4 sm:py-8;
+  }
+
+  .auth-card {
+    @apply mx-auto w-full max-w-md rounded-[32px] border border-white/80 bg-white/95 p-6 shadow-panel backdrop-blur sm:p-8;
+  }
+}
